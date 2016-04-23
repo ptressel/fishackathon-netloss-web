@@ -1,0 +1,36 @@
+<form ng-submit="saveControllerState(report, ref)">
+
+    <button class="form_submit_button btn btn-primary" type="submit">Save Changes</button>
+
+	<ul style="list-style-type: none;">
+		<h2 ng-hide="createMode">{{report.name}}</h2>
+		<li>
+			<span>Name: </span>
+			<input placeholder="Name" ng-model="report.name" size=60>
+		</li>
+		<li>
+			<span>Description: </span>
+			<input placeholder="Description" ng-model="report.description" size=80>
+		</li>
+		<li>
+			<span>Identifier: </span>
+			<input placeholder="Vessel identifier" ng-model="report.identifier" size=80>
+		</li>
+		<li>
+			<span>Latitude: </span>
+			<input placeholder="Latitude" ng-model="report.latitude" size=80>
+		</li>
+		<li>
+			<span>Longitude: </span>
+			<input placeholder="Longitude" ng-model="report.longitude" size=80>
+		</li>
+		<li>
+			<span>Color: </span>
+            <input colorpicker type="text" ng-model="report.color"/>&nbsp;<span style="border: 1px solid #000; display: inline-block; vertical-align: middle; width: 24px; height: 24px; background: {{ report.color }};"></span>
+		</li>
+		<li>
+            <br/>
+			<button class="btn btn-danger" ng-click="deleteObject(report);" type="button">Delete Report</button>
+		</li>
+	</ul>    
+</form>

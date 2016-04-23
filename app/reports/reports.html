@@ -1,0 +1,26 @@
+<table class="table"> 
+	<tbody>
+		<tr>
+			<td><h2 style="margin-top: 0px !important;">Reports</h2></td>
+		</tr>
+	</tbody>
+</table>
+
+<table id="report" class="table table-striped table-hover" ng-show="reports.length"> 
+	<thead> 
+		<tr>
+			<th class="col-md-2">Name</th>
+			<th class="col-md-4">Description</th>
+			<th class="col-md-2">Latitude</th>
+			<th class="col-md-2">Longitude</th>
+		</tr> 
+	</thead> 
+	<tbody> 
+		<tr ng-repeat="report in reports | orderBy:'name'">
+			<td><a href="#/reports/{{report.$id}}">{{report.name}}</a></td>
+			<td>{{report.description}}</td>
+			<td>{{report.latitude}}</td>
+			<td>{{report.longitude}}</td>
+		</tr> 
+	</tbody> 
+</table>

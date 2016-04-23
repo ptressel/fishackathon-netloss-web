@@ -1,0 +1,25 @@
+<h2>{{user.name}}</h2>
+
+<form ng-submit="saveControllerState(user, ref)">
+
+    <button class="form_submit_button btn btn-primary" type="submit">Save Changes</button>
+
+	<ul style="list-style-type: none;">
+		<li>
+			<span>Name: </span>
+			<input placeholder="Name" ng-model="user.name">
+		</li>
+		<li>
+			<span>E-mail: </span>
+			<input placeholder="User e-mail" ng-model="user.email">
+		</li>
+		<li>
+			<span>Login type: </span>
+			<strong>{{ user.provider }}</strong>
+		</li>				
+		<li>
+            <br/>
+			<button class="btn btn-danger" ng-hide="createMode" ng-click="deleteObject(user);" type="button">Delete User</button>
+		</li>
+	</ul>    
+</form>

@@ -1,0 +1,23 @@
+<table class="table"> 
+	<tbody>
+		<tr>
+			<td><h2 style="margin-top: 0px !important;">Users</h2></td>
+			<td><a class="btn btn-primary pull-right" href="#/users/create">Add New Event</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table id="users" class="table table-striped table-hover" ng-show="users.length"> 
+	<thead> 
+		<tr>
+			<th>Name</th>
+			<th>Login e-mail</th>
+		</tr> 
+	</thead> 
+	<tbody> 
+		<tr ng-repeat="user in users | orderBy:'name'">
+			<td><a href="#/users/{{user.$id}}">{{user.name}}</a></td>
+			<td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+		</tr> 
+	</tbody> 
+</table>

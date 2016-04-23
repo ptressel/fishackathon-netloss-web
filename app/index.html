@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" ng-app="netloss">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>NetLoss</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="bower_components/angular-ui-bootstrap-datetimepicker/datetimepicker.css"/>
+  <link rel="stylesheet" href="bower_components/angular-bootstrap-colorpicker/css/colorpicker.css"/>
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.min.css"/>
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css"/>
+  
+  <link rel="stylesheet" href="app.css"/>
+  <link rel="stylesheet" href="images/images.css"/>
+  
+</head>
+<body ng-cloak ng-controller="RootCtrl">
+
+  <ul class="menu">
+    <li ng-show="loggedIn"><a href="#/home">Dashboard</a></li>
+    <li ng-show="loggedIn"><a href="#/reports">Reports</a></li>
+    <li ng-hide="loggedIn"><a href="#/login">Login</a></li>
+    <li ng-show="loggedIn"><a ng-click="logout()">Logout</a>
+  </ul>
+
+  <div class="container">
+      <div class="floatdialog"> 
+       <div class="alert alert-success" ng-show="showSuccessAlert">
+         <button type="button" class="close" data-ng-click="switchBool('showSuccessAlert')" >×</button>
+         <strong>Done!</strong> {{successTextAlert}}
+       </div>
+      </div>
+      <div class="floatdialog"> 
+       <div class="alert alert-danger" ng-show="showErrorAlert">
+         <button type="button" class="close" data-ng-click="switchBool('showErrorAlert')" >×</button>
+         <strong>Error:</strong> {{errorTextAlert}}
+       </div>
+      </div>
+      <div ng-view></div>
+  </div>
+
+  <!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.x/angular.min.js"></script>
+<script src="//cdn.firebase.com/js/client/2.2.x/firebase.js"></script>
+<script src="//cdn.firebase.com/libs/angularfire/1.0.x/angularfire.min.js"></script>
+-->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-ui-bootstrap-datetimepicker/datetimepicker.js"></script>
+  <script src="bower_components/aws-sdk/dist/aws-sdk.min.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>
+  <script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+
+  <script src="app.js"></script>
+  <script src="config.js"></script>
+
+  <script src="components/appversion/appversion-directive.js"></script>
+  <script src="components/auth/auth.js"></script>
+  <script src="components/firebase.utils/firebase.utils.js"></script>
+  <script src="components/ngcloak/ngcloak-decorator.js"></script>
+  <script src="components/reverse/reverse-filter.js"></script>
+  <script src="components/security/security.js"></script>
+
+  <script src="root/root.js"></script>
+  <script src="home/home.js"></script>
+  <script src="login/login.js"></script>
+  <script src="reports/reports.js"></script>
+  <script src="reports/report_detail.js"></script>
+  <script src="users/users.js"></script>
+  
+</body>
+</html>

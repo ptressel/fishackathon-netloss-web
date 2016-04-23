@@ -1,0 +1,25 @@
+{
+  "name": "NetLoss",
+  "description": "NetLoss",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.9",
+    "angular-route": "^1.5.0",
+    "angular-loader": "^1.5.0",
+    "firebase": "^2.4.1",
+    "angularfire": "^1.1.4",
+    "angular-bootstrap": "^1.2.4",
+    "bootstrap": "^3.3.6",
+    "angular-animate": "^1.5.0",
+    "angular-ui-bootstrap-datetimepicker": "^0.14.4",
+    "aws-sdk": "^2.2.42",
+    "html5-boilerplate": "^5.3.0",
+    "angular-sanitize": "^1.5.0",
+    "angular-bootstrap-colorpicker": "^3.0.24",
+    "ng-dialog": "^0.5.9"
+  },
+  "resolutions": {
+    "angular": "1.4.9"
+  }
+}
