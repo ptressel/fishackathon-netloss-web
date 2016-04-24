@@ -36,24 +36,30 @@
         }
         $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-        //$scope.markers = [];
+        $scope.markers = [];
         var infoWindow = new google.maps.InfoWindow();
+        // TODO If these icons are being fetched and loaded more than once, get local copies.
         var createMarker = function (report){
+        	var icon = report.Type == "Found" ?
+        			'http://maps.google.com/mapfiles/ms/icons/green-dot.png' :
+        			'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
             var marker = new google.maps.Marker({
                 map: $scope.map,
                 position: new google.maps.LatLng(report.Latitude, report.Longitude),
-                title: report.name
+                title: report.name,
+                icon: icon
             });
             marker.content = '<div class="infoWindowContent">' + report.$id + '</div>';
             google.maps.event.addListener(report, 'click', function(){
                 infoWindow.setContent('<h2>' + report.$id + '</h2>' + marker.content);
                 infoWindow.open($scope.map, marker);
             });
-            //$scope.markers.push(marker);
+            $scope.markers.push(marker);
         }  
 
         // Function to create map markers
         var createMapMarkers = function() {
+          $scope.markers = [];
           var i;      
           for (i = 0; i < reportsList.length; i++){
               createMarker(reportsList[i]);
