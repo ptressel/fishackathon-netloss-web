@@ -140,4 +140,7 @@ fieldset {
   font-size: 12px;
 }
 
-
+#map {
+    height:500px; 
+    width:500px; 
+}
