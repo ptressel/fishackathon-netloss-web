@@ -30,8 +30,8 @@
         $scope.reports = reportsList;
       
         var mapOptions = {
-            zoom: 12,
-            center: new google.maps.LatLng(47.5234, -122.0097),
+            zoom: 9,
+            center: new google.maps.LatLng(48.341690, -122.880927),
             mapTypeId: google.maps.MapTypeId.TERRAIN
         }
         $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
