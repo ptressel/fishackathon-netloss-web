@@ -14,7 +14,7 @@
 	<thead> 
 		<tr>
 		    <th class="col-md-2">ID</th>
-			<th class="col-md-2">Biomass</th>
+		    <th class="col-md-2">Type</th>
 			<th class="col-md-2">Color</th>
 			<th class="col-md-2">Mesh Size</th>
 			<th class="col-md-2">Twine Size</th>
@@ -25,7 +25,7 @@
 	<tbody> 
 		<tr ng-repeat="report in reports | orderBy:'name'">
 			<td><a href="#/reports/{{report.$id}}">{{report.$id}}</a></td>
-			<td>{{report.Biomass}}</td>
+			<td>{{report.Type}}</td>
 			<td>{{report.Color}}</td>
 			<td>{{report["Mesh Size"]}}</td>
 			<td>{{report["Twine Size"]}}</td>

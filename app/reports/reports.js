@@ -75,7 +75,6 @@
             google.maps.event.trigger(selectedMarker, 'click');
         }
       });
-      
     }]);
 
   app.config(['$routeProvider', function($routeProvider) {
